@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 
 namespace BDV
@@ -17,25 +17,32 @@ namespace BDV
             {
                 //ler 1 linha
                 //separar a linha
-                //imprimier a linha formartada
+                //imprimir a linha formartada
                 //voltar para o loop opnde leio mais uma linha
 
                 //string linha = "01;36545802895;andre oliveira;F;20210101;99991231";
 
-                string [] linhaSeparada = linha.Split(";");           
+                string [] linhaSeparada = linha.Split(";");
 
                 if (linhaSeparada[0].Equals("01"))
-                    Console.WriteLine(@"fazer o que é pra faer quando é 01");
 
+                {
+                    Console.WriteLine($"`CPF/CNPJ: {linhaSeparada[1]} - N2 : {linhaSeparada[2]} - Descrição e domínio : {linhaSeparada[3]}");
+                }
+                        
                 if (linhaSeparada[0].Equals("02"))
                 {
-                    Console.WriteLine($"`NOME DO CLIENTE:{linhaSeparada[1]} - CPF/CNPJ{linhaSeparada[2]}");                   
+                    Console.WriteLine($"`Tipo do Registro: {linhaSeparada[1]} - N2 : {linhaSeparada[2]} - Descrição e domínio : {linhaSeparada[3]}");                   
 
                 }
 
 
                 if (linhaSeparada[0].Equals("99"))
-                    Console.WriteLine($"`NOME DO CLIENTE:{linhaSeparada[1]} - CPF/CNPJ{linhaSeparada[2]}");
+                {
+                    Console.WriteLine($"`Número de registros: {linhaSeparada[1]} - N2 : {linhaSeparada[2]}");
+
+                }
+
             }
             
 
